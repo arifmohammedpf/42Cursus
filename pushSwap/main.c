@@ -17,16 +17,20 @@ int	main(int count, char **args)
 {
 	t_list	*a;
 	t_list	*b;
+	t_list	*clone;
 
 	b = NULL;
 	if (count == 1)
 		return (0);
-	if (!get_list_stack(args, &a))
+	if (!get_list_stack(args, &a) || !get_list_stack(args, &clone))
 	{
 		ft_putstr("Error\n");
 		exit(1);
 	}
-	sort_stack(a, b);
+	normal_sort(&clone);
+	make_index_value(a, clone);
+	free_list(clone);
+	sort_stack(&a, &b);
 	ft_lstprint(a);
 	return (0);
 }
