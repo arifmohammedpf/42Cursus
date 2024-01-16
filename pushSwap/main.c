@@ -22,7 +22,8 @@ int	main(int count, char **args)
 	b = NULL;
 	if (count == 1)
 		return (0);
-	if (!get_list_stack(args, &a) || !get_list_stack(args, &clone))
+	if (args[1] == NULL || !args[1][0]
+		|| !get_list_stack(args, &a) || !get_list_stack(args, &clone))
 	{
 		ft_putstr("Error\n");
 		exit(1);
