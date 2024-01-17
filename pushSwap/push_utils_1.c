@@ -96,7 +96,7 @@ int	get_list_stack(char **args, t_list **head)
 		}
 		free_splits(tmp_splits);
 	}
-	return (!is_sorted(*head));
+	return (1);
 }
 
 // t_list	*get_list_stack(char **args)
