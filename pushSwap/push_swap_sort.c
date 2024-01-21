@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 10:28:08 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/07 20:32:33 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:58:11 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,35 +89,15 @@ void	numbers_sort(t_list **a, t_list **b, int size)
 	int min;
 	int min_idx;
 
-	min = 0;
-	min_idx = 0;
 	j = 0;
-	while (size > j++)
-	{
-		if ((*a)->value < min)
-		{
-			min = (*a)->value;
-			min_idx = j - 1;
-		}
-	}
+	min = getMinValue(*a, &min_idx);
 	while (*a != NULL)
 	{
 		if ((*a)->value == min)
 		{
 			pb(a, b);
 			if (*a != NULL)
-			{
-				j = 0;
-				min = (*a)->value;
-				while (size > j++)
-				{
-					if ((*a)->value < min)
-					{
-						min = (*a)->value;
-						min_idx = j - 1;
-					}
-				}
-			}
+				min = getMinValue(*a, &min_idx);
 		}
 		else
 		{

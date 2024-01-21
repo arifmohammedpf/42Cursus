@@ -68,3 +68,26 @@ void	make_index_value(t_list *a, t_list *clone)
 		a = a->next;
 	}
 }
+
+int	getMinValue(t_list *a, int *min_idx)
+{
+	int		  min;
+	int			j;
+	t_list	*node;
+
+	j = 0;
+	node = a;
+	*min_idx = 0;
+	min = node->value;
+	while (node)
+	{
+		if ((node->value) < min)
+		{
+			min = node->value;
+			*min_idx = j;
+		}
+		j++;
+		node = node->next;
+	}
+	return (min);
+}

@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 10:00:16 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/07 10:33:36 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/21 11:51:46 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ void	five_numbers_sort(t_list **a, t_list **b);
 void	numbers_sort(t_list **a, t_list **b, int size);
 void	sort_stack(t_list **a, t_list **b);
 
-int	  is_error_zero(int input, char *str);
-int	  is_dup(int input, t_list *head);
-int   is_sorted(t_list *a);
+int	  	is_error_zero(int input, char *str);
+int	  	is_dup(int input, t_list *head);
+int   	is_sorted(t_list *a);
 void	free_list(t_list *list);
 void	exit_push_swap(t_list *head, char **splits);
-int	  get_list_stack(char **args, t_list **head);
+int	  	get_list_stack(char **args, t_list **head);
 void	normal_sort(t_list **list);
 void	make_index_value(t_list *a, t_list *clone);
+int		getMinValue(t_list *a, int *min_idx);
 
 #endif
