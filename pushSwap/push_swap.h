@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 10:00:16 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/21 11:51:46 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/21 16:10:26 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rra_or_rrb(t_list **a, char swap_type);
 void	three_numbers_sort(t_list **a);
 void	four_numbers_sort(t_list **a, t_list **b);
 void	five_numbers_sort(t_list **a, t_list **b);
-void	numbers_sort(t_list **a, t_list **b, int size);
+void	numbers_sort(t_list **a, t_list **b, int bits, int size);
 void	sort_stack(t_list **a, t_list **b);
 
 int	  	is_error_zero(int input, char *str);
