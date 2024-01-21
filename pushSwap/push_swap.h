@@ -33,7 +33,7 @@ void	rra_or_rrb(t_list **a, char swap_type);
 void	three_numbers_sort(t_list **a);
 void	four_numbers_sort(t_list **a, t_list **b);
 void	five_numbers_sort(t_list **a, t_list **b);
-void	numbers_sort(t_list **a, t_list **b, int bits, int size);
+void	numbers_sort(t_list **a, t_list **b, int size);
 void	sort_stack(t_list **a, t_list **b);
 
 int	  is_error_zero(int input, char *str);

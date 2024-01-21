@@ -83,38 +83,59 @@ void	five_numbers_sort(t_list **a, t_list **b)
 		ra_or_rb(a, 'a');
 }
 
-void	numbers_sort(t_list **a, t_list **b, int bits, int size)
+void	numbers_sort(t_list **a, t_list **b, int size)
 {
-	int	i;
 	int	j;
+	int min;
+	int min_idx;
 
-	i = 0;
-	while (i < bits)
+	min = 0;
+	min_idx = 0;
+	j = 0;
+	while (size > j++)
 	{
-		j = 0;
-		while (j < size)
+		if ((*a)->value < min)
 		{
-			if ((((*a)->value >> i) & 1) == 1)
-				ra_or_rb(a, 'a');
-			else
-				pb(a, b);
-			j++;
+			min = (*a)->value;
+			min_idx = j - 1;
 		}
-		while (*b != NULL)
-			pa(a, b);
-		i++;
 	}
+	while (*a != NULL)
+	{
+		if ((*a)->value == min)
+		{
+			pb(a, b);
+			if (*a != NULL)
+			{
+				j = 0;
+				min = (*a)->value;
+				while (size > j++)
+				{
+					if ((*a)->value < min)
+					{
+						min = (*a)->value;
+						min_idx = j - 1;
+					}
+				}
+			}
+		}
+		else
+		{
+			if (min_idx < (size / 2))
+				rra_or_rrb(a, 'a');
+			else
+				ra_or_rb(a, 'a');
+		}
+	}
+	while (*b != NULL)
+		pa(a, b);
 }
 
 void	sort_stack(t_list **a, t_list **b)
 {
-	int	max_bits;
 	int	size;
 
-	max_bits = 0;
 	size = ft_lstsize(*a);
-	while (((size - 1) >> max_bits) != 0)
-		max_bits++;
 	if (size == 2)
 	  sa_or_sb(a, 'a');
 	else if (size == 3)
@@ -124,5 +145,5 @@ void	sort_stack(t_list **a, t_list **b)
 	else if (size == 5)
 		five_numbers_sort(a, b);
 	else
-		numbers_sort(a, b, max_bits, size);
+		numbers_sort(a, b, size);
 }

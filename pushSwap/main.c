@@ -57,7 +57,7 @@ int	main(int count, char **args)
 		make_index_value(a, clone);
 		free_list(clone);
 		sort_stack(&a, &b);
-		ft_lstprint(a);
+		// ft_lstprint(a);
 	}
 	return (0);
 }
