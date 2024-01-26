@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 10:28:08 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/21 16:12:14 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/26 09:38:09 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,34 @@ void	numbers_sort(t_list **a, t_list **b, int bits, int size)
 	int	j;
 
 	i = 0;
+	printf("bits --- %d\n", bits);
 	while (i < bits)
 	{
+		printf("------------------------------------\n");
+		printf("idx => %d\n", i);
+		ft_lstprint(*a);
+		printf("------------------------------------\n");
 		j = 0;
 		while (j < size)
 		{
 			if ((((*a)->value >> i) & 1) == 1)
+			{
+				printf("********************************\n");
+				printf("rotate A => %d\n", (*a)->value);
+				printf("********************************\n");
 				ra_or_rb(a, 'a');
+			}
 			else
+			{
+				printf("********************************\n");
+				printf("Push to B => %d\n", (*a)->value);
+				printf("********************************\n");
 				pb(a, b);
+			}
 			j++;
+				printf("------------------------------------\n");
+			ft_lstprint(*a);
+			printf("\n------------------------------------\n");
 		}
 		while (*b != NULL)
 			pa(a, b);
@@ -111,10 +129,7 @@ void	sort_stack(t_list **a, t_list **b)
 	int	max_bits;
 	int	size;
 
-	max_bits = 0;
 	size = ft_lstsize(*a);
-	while (((size - 1) >> max_bits) != 0)
-		max_bits++;
 	if (size == 2)
 	  sa_or_sb(a, 'a');
 	else if (size == 3)
@@ -124,5 +139,10 @@ void	sort_stack(t_list **a, t_list **b)
 	else if (size == 5)
 		five_numbers_sort(a, b);
 	else
+	{
+		max_bits = 1;
+		while ((size >> max_bits) != 0)
+			max_bits++;
 		numbers_sort(a, b, max_bits, size);
+	}
 }

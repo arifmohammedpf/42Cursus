@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 16:10:01 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/07 10:32:01 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/26 09:41:45 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ void	ft_lstprint(t_list *lst)
 {
 	if (!lst)
 		return ;
+	write (1, "Stack = ", 8);
 	while (lst)
 	{
 		ft_putnbr(lst->value);
-		write (1, "\n", 1);
 		lst = lst->next;
+		if (lst)
+			write (1, " -> ", 4);
 	}
+	write (1, "\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:40 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/07 20:33:41 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/21 16:29:19 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main(int count, char **args)
 		normal_sort(&clone);
 		make_index_value(a, clone);
 		free_list(clone);
+		ft_lstprint(a);
 		sort_stack(&a, &b);
-		// ft_lstprint(a);
 	}
 	return (0);
 }
