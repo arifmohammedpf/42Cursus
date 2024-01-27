@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 10:28:08 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/26 09:38:09 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/27 09:23:16 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	three_numbers_sort(t_list **a)
 {
-  int v1;
-  int v2;
-  int v3;
+	int	v1;
+	int	v2;
+	int	v3;
 
-  v1 = (*a)->value;
-  v2 = (*a)->next->value;
-  v3 = (*a)->next->next->value;
-
+	v1 = (*a)->value;
+	v2 = (*a)->next->value;
+	v3 = (*a)->next->next->value;
 	if ((v1 < v2) && (v1 < v3))
 	{
 		rra_or_rrb(a, 'a');
@@ -48,10 +47,10 @@ void	four_numbers_sort(t_list **a, t_list **b)
 	while (i--)
 	{
 		if ((*a)->value == 0)
-    {
+		{
 			pb(a, b);
-      break;
-    }
+			break ;
+		}
 		else
 			ra_or_rb(a, 'a');
 	}
@@ -75,7 +74,7 @@ void	five_numbers_sort(t_list **a, t_list **b)
 	pa(a, b);
 	pa(a, b);
 	if ((*a)->value == 0)
-  {
+	{
 		sa_or_sb(a, 'a');
 		ra_or_rb(a, 'a');
 	}
@@ -83,40 +82,26 @@ void	five_numbers_sort(t_list **a, t_list **b)
 		ra_or_rb(a, 'a');
 }
 
-void	numbers_sort(t_list **a, t_list **b, int bits, int size)
+void	numbers_sort(t_list **a, t_list **b, int size)
 {
 	int	i;
 	int	j;
+	int	bits;
+	int	shift_and_multiply;
 
+	bits = get_max_value_bits(*a);
 	i = 0;
-	printf("bits --- %d\n", bits);
 	while (i < bits)
 	{
-		printf("------------------------------------\n");
-		printf("idx => %d\n", i);
-		ft_lstprint(*a);
-		printf("------------------------------------\n");
 		j = 0;
 		while (j < size)
 		{
-			if ((((*a)->value >> i) & 1) == 1)
-			{
-				printf("********************************\n");
-				printf("rotate A => %d\n", (*a)->value);
-				printf("********************************\n");
+			shift_and_multiply = ((*a)->value >> i) & 1;
+			if (shift_and_multiply == 1)
 				ra_or_rb(a, 'a');
-			}
 			else
-			{
-				printf("********************************\n");
-				printf("Push to B => %d\n", (*a)->value);
-				printf("********************************\n");
 				pb(a, b);
-			}
 			j++;
-				printf("------------------------------------\n");
-			ft_lstprint(*a);
-			printf("\n------------------------------------\n");
 		}
 		while (*b != NULL)
 			pa(a, b);
@@ -126,12 +111,11 @@ void	numbers_sort(t_list **a, t_list **b, int bits, int size)
 
 void	sort_stack(t_list **a, t_list **b)
 {
-	int	max_bits;
 	int	size;
 
 	size = ft_lstsize(*a);
 	if (size == 2)
-	  sa_or_sb(a, 'a');
+		sa_or_sb(a, 'a');
 	else if (size == 3)
 		three_numbers_sort(a);
 	else if (size == 4)
@@ -139,10 +123,5 @@ void	sort_stack(t_list **a, t_list **b)
 	else if (size == 5)
 		five_numbers_sort(a, b);
 	else
-	{
-		max_bits = 1;
-		while ((size >> max_bits) != 0)
-			max_bits++;
-		numbers_sort(a, b, max_bits, size);
-	}
+		numbers_sort(a, b, size);
 }

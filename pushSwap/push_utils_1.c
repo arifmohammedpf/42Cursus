@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_utils_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:51 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/07 15:04:09 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/27 09:19:35 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,34 +98,3 @@ int	get_list_stack(char **args, t_list **head)
 	}
 	return (1);
 }
-
-// t_list	*get_list_stack(char **args)
-// {
-// 	t_list	*head;
-// 	t_list	*node;
-// 	char	**tmp_splits;
-// 	int		input;
-// 	int		i;
-// 	int		j;
-
-// 	i = 0;
-// 	head = NULL;
-// 	while (args[++i])
-// 	{
-// 		tmp_splits = ft_split(args[i], ' ');
-// 		if (!tmp_splits)
-// 			return (NULL);
-// 		j = -1;
-// 		while (tmp_splits[++j])
-// 		{
-// 			input = ft_atoi(tmp_splits[j]);
-// 			if (is_error_zero(input, tmp_splits[j]))
-// 				exit_push_swap(head, tmp_splits);
-// 			node = ft_lstnew(input);
-// 			ft_lstadd_back(&head, node);
-// 			printf("int=> %d\n", head->value);
-// 		}
-// 		free_splits(tmp_splits);
-// 	}
-// 	return (head);
-// }

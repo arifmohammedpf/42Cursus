@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_utils_2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/27 09:19:53 by arimoham          #+#    #+#             */
+/*   Updated: 2024/01/27 09:21:43 by arimoham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(t_list *a)
+int	is_sorted(t_list *a)
 {
 	t_list	*i;
 	t_list	*j;
@@ -69,25 +80,25 @@ void	make_index_value(t_list *a, t_list *clone)
 	}
 }
 
-int	getMinValue(t_list *a, int *min_idx)
+int	get_max_value_bits(t_list *a)
 {
-	int		  min;
-	int			j;
 	t_list	*node;
+	int		bits;
+	int		max_value;
 
-	j = 0;
 	node = a;
-	*min_idx = 0;
-	min = node->value;
+	bits = 0;
+	max_value = node->value;
 	while (node)
 	{
-		if ((node->value) < min)
-		{
-			min = node->value;
-			*min_idx = j;
-		}
-		j++;
+		if ((node->value) > max_value)
+			max_value = node->value;
 		node = node->next;
 	}
-	return (min);
+	while (max_value > 0)
+	{
+		bits++;
+		max_value = max_value >> 1;
+	}
+	return (bits);
 }

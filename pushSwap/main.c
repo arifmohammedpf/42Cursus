@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:40 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/21 16:29:19 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/27 09:26:33 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	is_valid_args(char **args)
 	{
 		j = 0;
 		if (args[i][j] == '\0')
-				return (0);
+			return (0);
 		while (args[i][j] && args[i][j] == ' ')
 		{
 			if (args[i][j + 1] == '\0')
@@ -56,24 +56,7 @@ int	main(int count, char **args)
 		normal_sort(&clone);
 		make_index_value(a, clone);
 		free_list(clone);
-		ft_lstprint(a);
 		sort_stack(&a, &b);
 	}
 	return (0);
 }
-
-// int	main(int count, char **args)
-// {
-// 	t_list	*a;
-
-// 	if (count == 1)
-// 		return (0);
-// 	a = get_list_stack(args);
-// 	if (!a)
-// 	{
-// 		ft_putstr("Error\n");
-// 		exit(1);
-// 	}
-// 	ft_lstprint(a);
-// 	return (0);	
-// }

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_moves_2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/27 09:19:05 by arimoham          #+#    #+#             */
+/*   Updated: 2024/01/27 09:26:15 by arimoham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Rotate up one time all elements of stack a or b. So now first element becomes the last one
+// Rotate up one time all elements of stack a or b. first element becomes last
 void	ra_or_rb(t_list **a, char swap_type)
 {
 	t_list	*tmp;
@@ -14,10 +25,10 @@ void	ra_or_rb(t_list **a, char swap_type)
 	*a = (*a)->next;
 	tmp->next = NULL;
 	last->next = tmp;
-  if (swap_type == 'a')
-	  write(1, "ra\n", 3);
-  else
-    write(1, "rb\n", 3);
+	if (swap_type == 'a')
+		write(1, "ra\n", 3);
+	else
+		write(1, "rb\n", 3);
 }
 
 // Execute ra and rb
@@ -30,14 +41,12 @@ void	rr(t_list **a, t_list **b)
 
 	if (!(*a) || ft_lstsize(*a) == 1 || !(*b) || ft_lstsize(*b) == 1)
 		return ;
-
-  tmp_a = *a;
+	tmp_a = *a;
 	last_a = ft_lstlast(*a);
 	*a = (*a)->next;
 	tmp_a->next = NULL;
 	last_a->next = tmp_a;
 	tmp_b = *b;
-
 	last_b = ft_lstlast(*b);
 	*b = (*b)->next;
 	tmp_b->next = NULL;
@@ -45,10 +54,10 @@ void	rr(t_list **a, t_list **b)
 	write(1, "rr\n", 3);
 }
 
-// Rotate down one time all elements of stack a or b. So now last element becomes the first one
+// Rotate down one time all elements of stack a or b. last element becomes first
 void	rra_or_rrb(t_list **a, char swap_type)
 {
-  t_list	*tmp;
+	t_list	*tmp;
 	t_list	*last;
 
 	if (!(*a) || ft_lstsize(*a) == 1)
@@ -60,8 +69,8 @@ void	rra_or_rrb(t_list **a, char swap_type)
 	tmp->next = NULL;
 	last->next = *a;
 	*a = last;
-  if (swap_type == 'a')
-	  write(1, "rra\n", 4);
-  else
-    write(1, "rrb\n", 4);
+	if (swap_type == 'a')
+		write(1, "rra\n", 4);
+	else
+		write(1, "rrb\n", 4);
 }
