@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.c ft_lstadd_back.c ft_lstnew.c ft_memcpy.c ft_strlen.c push_utils_2.c \
 ft_lstadd_front.c ft_lstprint.c ft_putstr.c ft_substr.c push_moves_1.c push_swap_sort.c \

@@ -6,13 +6,12 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 09:18:44 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:26:21 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:55:43 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Swap first 2 top elements of stack a or b
 void	sa_or_sb(t_list **a, char swap_type)
 {
 	int	tmp;
@@ -28,7 +27,6 @@ void	sa_or_sb(t_list **a, char swap_type)
 		write(1, "sb\n", 3);
 }
 
-// Execute both sa and sb
 void	ss(t_list **a, t_list **b)
 {
 	int	tmp;
@@ -44,7 +42,6 @@ void	ss(t_list **a, t_list **b)
 	write(1, "ss\n", 3);
 }
 
-// Push first element from the top of b to the top of a
 void	pa(t_list **a, t_list **b)
 {
 	t_list	*tmp;
@@ -60,7 +57,6 @@ void	pa(t_list **a, t_list **b)
 	write(1, "pa\n", 3);
 }
 
-// Push first element from the top of a to the top of b
 void	pb(t_list **a, t_list **b)
 {
 	t_list	*tmp;

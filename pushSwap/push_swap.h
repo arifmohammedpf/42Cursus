@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 10:00:16 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:23:40 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:55:06 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "libft.h"
 
 int		get_list_stack(char **args, t_list **a);
-// t_list	*get_list_stack(char **args);
 
 void	sa_or_sb(t_list **a, char swap_type);
 void	ss(t_list **a, t_list **b);

@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:40 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/31 08:34:13 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:57:05 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_valid_args(char **args)
 	return (1);
 }
 
-void	error_exit()
+void	error_exit(void)
 {
 	ft_putstr("Error\n");
 	exit(1);

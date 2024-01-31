@@ -6,13 +6,12 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 09:19:05 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:26:15 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:55:29 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Rotate up one time all elements of stack a or b. first element becomes last
 void	ra_or_rb(t_list **a, char swap_type)
 {
 	t_list	*tmp;
@@ -31,7 +30,6 @@ void	ra_or_rb(t_list **a, char swap_type)
 		write(1, "rb\n", 3);
 }
 
-// Execute ra and rb
 void	rr(t_list **a, t_list **b)
 {
 	t_list	*tmp_a;
@@ -54,7 +52,6 @@ void	rr(t_list **a, t_list **b)
 	write(1, "rr\n", 3);
 }
 
-// Rotate down one time all elements of stack a or b. last element becomes first
 void	rra_or_rrb(t_list **a, char swap_type)
 {
 	t_list	*tmp;
