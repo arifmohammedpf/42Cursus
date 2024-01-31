@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:40 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:26:33 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/31 08:34:13 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	is_valid_args(char **args)
 	return (1);
 }
 
+void	error_exit()
+{
+	ft_putstr("Error\n");
+	exit(1);
+}
+
 int	main(int count, char **args)
 {
 	t_list	*a;
@@ -45,18 +51,19 @@ int	main(int count, char **args)
 	b = NULL;
 	if (count == 1)
 		return (0);
-	if (args[1] == NULL || !is_valid_args(args)
-		|| !get_list_stack(args, &a) || !get_list_stack(args, &clone))
-	{
-		ft_putstr("Error\n");
-		exit(1);
-	}
+	if (args[1] == NULL || !is_valid_args(args))
+		error_exit();
+	if (!get_list_stack(args, &a))
+		return (free_list(a), 0);
+	if (!get_list_stack(args, &clone))
+		return (free_list(a), free_list(clone), 0);
 	if (!is_sorted(a))
 	{
 		normal_sort(&clone);
 		make_index_value(a, clone);
-		free_list(clone);
 		sort_stack(&a, &b);
 	}
+	free_list(clone);
+	free_list(a);
 	return (0);
 }

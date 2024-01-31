@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 09:56:51 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:19:35 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:02:11 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	free_list(t_list *list)
 	t_list	*tmp_list;
 
 	tmp_list = list;
-	while (tmp_list)
+	while (list)
 	{
-		tmp_list = tmp_list->next;
+		tmp_list = list->next;
 		free(list);
 		list = tmp_list;
 	}

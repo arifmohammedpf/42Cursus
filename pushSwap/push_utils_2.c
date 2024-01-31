@@ -6,7 +6,7 @@
 /*   By: arimoham <arimoham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 09:19:53 by arimoham          #+#    #+#             */
-/*   Updated: 2024/01/27 09:21:43 by arimoham         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:33:38 by arimoham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	is_sorted(t_list *a)
 		}
 		i = i->next;
 	}
-	free_list(a);
 	return (1);
 }
 
