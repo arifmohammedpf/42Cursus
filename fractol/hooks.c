@@ -21,9 +21,9 @@ int	key_control_hook(int keycode, t_data *img)
 	else if (keycode == 85 || keycode == 65435) // Mac and Linux Keycode for numpad key 3
 		img->base_color = 0x001642;
 	else if (keycode == 69 || keycode == 65451) // Mac and Linux Keycode for plus key in numpad
-    img->zoom *= 1.1;
+    img->zoom = img->zoom * 1.1;
   else if (keycode == 78 || keycode == 65453) // Mac and Linux Keycode for minus key in numbpad
-    img->zoom /= 1.1;
+    img->zoom = img->zoom / 1.1;
   show_fractol(img);
 	return (0);
 }

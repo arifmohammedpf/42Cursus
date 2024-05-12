@@ -3,6 +3,10 @@
 void	ft_error(void)
 {
 	ft_putstr("Invalid Arguments\n");
+	ft_putstr("To Run Fractol: \n");
+	ft_putstr("1. For Mandlebort => ./fractol 1 \n");
+	ft_putstr("2. For Julia => ./fractol [-2 to 2] \n");
+	ft_putstr("3. For Tricorn => ./fractol 2 \n");
 	exit (1);
 }
 
@@ -13,13 +17,10 @@ void	initialize(t_data *img)
 	img->base_color = 0x001642;
 	img->fractol_type = 'j';
 	img->zoom = 1;
-	img->x_move = 0;
-	img->y_move = 0;
 	img->mlx = mlx_init();
 	img->mlx_window = mlx_new_window(img->mlx, img->width, img->height, "Fractol");
 	img->img = mlx_new_image(img->mlx, img->width, img->height);
-	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
-			&img->line_length, &img->endian);
+	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel, &img->line_length, &img->endian);
 }
 
 void	validate(t_data *img, int argc, char **argv)

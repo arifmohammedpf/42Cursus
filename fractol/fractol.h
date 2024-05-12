@@ -27,8 +27,6 @@ typedef struct s_data
 	double	cx;
 	double	cy;
 	double	offset;
-	double	x_move;
-	double	y_move;
 	double	zoom;
 	double	x_axis;
 	double	y_axis;

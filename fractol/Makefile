@@ -17,7 +17,7 @@ $(NAME): $(SRCS)
 	@echo "Fractol compiled:"
 	@echo "1. For Mandlebort => ./$(NAME) 1"
 	@echo "2. For Julia => ./$(NAME) -2 2"
-	@echo "3. For Tricon => ./$(NAME) 2"
+	@echo "3. For Tricorn => ./$(NAME) 2"
 
 clean:
 	$(MAKE) clean -C mlx
