@@ -12,7 +12,6 @@ static void	show_mandelbrot(t_data *img, int height, int width)
 	img->xtemp = 0.0;
 	img->iteration = 0;
 	img->max_iteration = 40;
-	img->offset = 0.05;
 	while (x * x + y * y <= 2 * 2 && img->iteration < img->max_iteration)
 	{
     x0 = get_x0(img, width);
@@ -63,7 +62,6 @@ static	void	show_tricorn(t_data *img, int height, int width)
 	img->xtemp = 0.0;
 	img->iteration = 0;
 	img->max_iteration = 200;
-	img->offset = 0.05;
 	while (x * x + y * y <= 4 && img->iteration < img->max_iteration)
 	{
 		img->xtemp = x * x - y * y + get_x0(img, width);
