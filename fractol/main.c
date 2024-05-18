@@ -17,6 +17,7 @@ void	initialize(t_data *img)
 	img->base_color = 0x001642;
 	img->fractol_type = 'j';
 	img->zoom = 1;
+	img->is_motion = 0;
 	img->mlx = mlx_init();
 	img->mlx_window = mlx_new_window(img->mlx, img->width, img->height, "Fractol");
 	img->img = mlx_new_image(img->mlx, img->width, img->height);
@@ -54,9 +55,10 @@ int	main(int argc, char **argv)
 	  initialize(&img);
 		validate(&img, argc, argv);
 		show_fractol(&img);
-		mlx_key_hook(img.mlx_window, key_control_hook, &img);
-		mlx_mouse_hook(img.mlx_window, mouse_control_hook, &img);
 		mlx_hook(img.mlx_window, 17, 0, close_hook, 0);
+		mlx_hook(img.mlx_window, 6, 1L < 6, mouse_motion_hook, &img);
+		mlx_mouse_hook(img.mlx_window, mouse_control_hook, &img);
+		mlx_key_hook(img.mlx_window, key_control_hook, &img);
 		mlx_loop(img.mlx);
 	}
 	else

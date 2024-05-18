@@ -19,6 +19,7 @@ typedef struct s_data
 	int			endian;
 	int			width;
 	int			height;
+	int			is_motion;
 	char		fractol_type;
 	int			base_color;
 	int			iteration;
@@ -48,5 +49,6 @@ double	ft_atof(const char *str);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int colour);
 int		mouse_control_hook(int mouse_key_code, int x, int y, t_data *img);
 int		key_control_hook(int keycode, t_data *img);
+int		mouse_motion_hook(int x, int y, t_data *img);
 
 #endif
