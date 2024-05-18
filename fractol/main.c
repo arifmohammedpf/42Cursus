@@ -17,7 +17,9 @@ void	initialize(t_data *img)
 	img->base_color = 0x001642;
 	img->fractol_type = 'j';
 	img->zoom = 1;
-	img->is_motion = 0;
+	img->is_motion = -1;
+	img->x_axis_move = 0;
+	img->y_axis_move = 0;
 	img->mlx = mlx_init();
 	img->mlx_window = mlx_new_window(img->mlx, img->width, img->height, "Fractol");
 	img->img = mlx_new_image(img->mlx, img->width, img->height);

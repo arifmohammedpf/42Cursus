@@ -27,10 +27,9 @@ typedef struct s_data
 	double	xtemp;
 	double	cx;
 	double	cy;
-	double	offset;
 	double	zoom;
-	double	x_axis;
-	double	y_axis;
+	double	x_axis_move;
+	double	y_axis_move;
 }	t_data;
 
 void	initialize(t_data *img);

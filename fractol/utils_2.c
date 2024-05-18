@@ -12,7 +12,7 @@ double	get_x0(t_data *img, int w)
 {
 	double	result;
 
-	result = (w - img->width / 2) / (0.25 * img->zoom * img->width);
+	result = (w - img->width / 2) / (0.25 * img->zoom * img->width) + img->x_axis_move;
 	return (result);
 }
 
@@ -20,6 +20,6 @@ double	get_y0(t_data *img, int h)
 {
 	double	result;
 
-	result = (h - img->height / 2) / (0.25 * img->zoom * img->height);
+	result = (h - img->height / 2) / (0.25 * img->zoom * img->height) + img->y_axis_move;
 	return (result);
 }
