@@ -50,6 +50,10 @@ int	key_control_hook(int keycode, t_data *img)
     img->zoom = img->zoom * 1.1;
   else if (keycode == 78 || keycode == 65453) // Mac and Linux Keycode for minus key in numbpad
     img->zoom = img->zoom / 1.1;
+  else if (keycode == 49 || keycode == 32) // Mac and Linux Keycode for minus key in numbpad
+    img->is_motion = 0;
+  else if (keycode == 36 || keycode == 65293) // Mac and Linux Keycode for minus key in numbpad
+    img->is_motion = 1;
   show_fractol(img);
 	return (0);
 }
