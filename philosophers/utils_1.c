@@ -104,7 +104,7 @@ bool	ft_error(int argc, char **argv)
 
 	if (argc < 5 || argc > 6)
 	{
-		printf("Error : Run ./philo 2 800 200 200");
+		printf("Error : Run ./philo 2 800 200 200\n");
 		return (false);
 	}
 	i = 1;
@@ -112,7 +112,7 @@ bool	ft_error(int argc, char **argv)
 	{
 		if (*argv[i] == '\0' || ft_atoi(argv[i]) <= 0)
 		{
-			printf("Error : Run ./philo 2 800 200 200");
+			printf("Error : Run ./philo 2 800 200 200\n");
 			return (false);
 		}
 		i++;
