@@ -1,0 +1,11 @@
+// mariadb docker_entry
+exec mysql --port=3307
+
+// wordpress docker entry
+until mysqladmin -h mariadb -P 3307
+--dbhost="mariadb:3307"
+
+
+mysql -u root -p
+SHOW VARIABLES LIKE 'port';
+
