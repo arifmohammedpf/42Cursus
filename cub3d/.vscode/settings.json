@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.dbclient-js": "javascript",
+		"fcntl.h": "c",
+		"unistd.h": "c"
+	}
+}
