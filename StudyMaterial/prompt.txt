@@ -1,0 +1,6 @@
+i need to study the 42 projects in this codebase. for that, i need you to first study [cub3d](directory;file:///c%3A/42AD/cub3d) project and create a study material as markdown files in a folder named Cub3dStudyMaterials.
+study materials should be, first an overall brief of the project, then each header files, classes, structs, functions should be explained. explanation can be like whats this for, why and how, something like that.
+i should be able to explain someone about this project and workflows.
+use subagents if you need. you dont have to write all in one file, you can split files as you prefer.
+ignore [mlx_mac](file;file:///c%3A/42AD/cub3d/mlx_mac) since they are external helper libraries.
+ask me if you have any doubts without assuming by yourself.
